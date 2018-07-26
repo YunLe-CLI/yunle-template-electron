@@ -1,0 +1,26 @@
+{
+   "author": "Muaz Khan",
+   "background": {
+      "persistent": false,
+      "scripts": [ "background-script.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content-script.js" ],
+      "matches": [ "https://www.webrtc-experiment.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Capture full-screen or specific application's screen on any HTTPs domain!",
+   "homepage_url": "https://www.webrtc-experiment.com/",
+   "icons": {
+      "48": "icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh0HSkKPGZo/eCUT8fA0B9cU9W8a2GbN6zC/E4gx9tLrKwgIHzV0M5kcAhYPHcoHsAcLK/2+0KsvTL5/zK/ob9MP2YD6bAMmc2n1Cv9Tc3T5gKox264z1Ot8gRGLUV5PHS2vAqAZ71ZwQ+1GGGWWL+OIrM/64/9cSCOWQwegehV4HEG+zSO42yM9qkLzyCHkCSn8hAYwDNrijE8WGRU21WI5zDsOYM4TlXHZkntpYhuyY7sMF3MsIMYiHySXp200dYfRfbhC74EFIg7rZnxppINuKk11YQ4DYxBDMIlOORYwhm5EHNFb8iizGsic3DLsy8vsHeNGY2afNrm6MCOFgnQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "34",
+   "name": "ajhifddimkapgcifgcodmmfdlknahffk",
+   "permissions": [ "desktopCapture" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.4",
+   "web_accessible_resources": [ "icon.png" ]
+}

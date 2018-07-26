@@ -1,0 +1,52 @@
+.notSelect{
+  user-select: none;
+  *{
+    cursor: default;
+  }
+}
+.desktopDrag, .wrap :global(.ant-card-head-wrapper),
+.wrap :global(.ant-card-head-title),
+.wrap :global(.ant-card-extra) {
+  -webkit-app-region: drag;
+}
+.ProgressWrap{
+  position: relative;
+}
+.ProgressInfo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.desktopNotDrag{
+  -webkit-app-region: no-drag;
+}
+.wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 165px;
+  overflow: hidden;
+}
+.info{
+  padding: 0 15px;
+  margin-top: 4px;
+  font-size: 12px;
+}
+.infod{
+  font-size: 12px;
+  margin-top: 10px;
+}
+.tableList, #webview{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
