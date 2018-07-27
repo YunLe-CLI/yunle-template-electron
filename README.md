@@ -10,7 +10,7 @@ $ npm install -g yunle-cli
 
 $ yunle init my-project
 
-$ > component
+$ > electron
     gulp
     webpack
     react
