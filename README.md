@@ -1,11 +1,31 @@
 # yunle-template-electron
 
-如使用该前端脚手架，可以先安装
 
-1. `npm install -g yunle-cli`
+## 开始
 
-2. `yunle init <project-name>`
+按照以下步骤开始开发您自己的react组件:
 
-3. `cd <project-name> && npm install`
+```
+$ npm install -g yunle-cli
 
-4. `npm run dev`
+$ yunle init my-project
+
+$ > component
+    gulp
+    webpack
+    react
+    node
+```
+
+或者： 
+
+* ```git clone https://github.com/YunLe-CLI/yunle-template-component.git```
+* ```npm install ```
+* ```npm run start```
+
+记得重置git历史:
+
+* ```rm rf .```
+* ```git init```
+* ```git add .```
+* ```git push -m init```
