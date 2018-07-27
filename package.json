@@ -6,7 +6,8 @@
   "version": "0.0.1",
   "main": "app.js",
   "scripts": {
-    "postinstall": "",
+    "preinstall": "",
+    "postinstall": "cd src && npm i",
     "start": "concurrently \"npm run start:dva\" \"electron --inspect=5858 . --DESKTOP_APP_ENV=develop\"",
     "start:pro": "concurrently \"npm run build:dva\" \"electron --inspect=5858 . --DESKTOP_APP_ENV=production\"",
     "start:dva": "cd src && npm run develop",
@@ -17,7 +18,7 @@
     "build": "npm run build:win-64 && npm run build:mac"
   },
   "engines": {
-    "install-node": "6.9.2"
+    "node": ">=8.0.0"
   },
   "dependencies": {
     "ali-oss": "^6.0.1",
