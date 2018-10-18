@@ -3,7 +3,7 @@
 
 ## 开始
 
-按照以下步骤开始开发您自己的react组件:
+按照以下步骤开始开发您自己的electron客户端:
 
 ```
 $ npm install -g yunle-cli
@@ -19,7 +19,7 @@ $ > electron
 
 或者： 
 
-* ```git clone https://github.com/YunLe-CLI/yunle-template-component.git```
+* ```git clone https://github.com/YunLe-CLI/yunle-template-electron.git```
 * ```npm install ```
 * ```npm run start```
 
