@@ -1,20 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-electron-builder.yaml
-node_modules
-
-# production
-/app
 /dist
-/build
-*.map
-db.json
-# misc
-.DS_Store
-npm-debug.log*
-.idea
-.package-lock.json
-npm-debug.log*
-/app/
+/node_modules
+/app/dist
+/app/node_modules
+/app/package-lock.json
+/src/renderer/pages/.umi
 package-lock.json
+yarn.lock
