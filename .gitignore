@@ -6,3 +6,4 @@
 /src/renderer/pages/.umi
 package-lock.json
 yarn.lock
+yarn-error.log
