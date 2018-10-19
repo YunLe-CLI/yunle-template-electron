@@ -6,20 +6,12 @@ export function init() {
   win.loadURL(getPath());
 
   // 调用下载
-  download.downloadFile("https://class100-ppt.oss-cn-shanghai.aliyuncs.com/TESTDD/ui/teaching/latest/build.zip", "./", (arg, percentage) => {
-    if (arg === "progress") {
-      console.log(111111, percentage)
-      // 显示进度
-    } else if (arg === "finished") {
-      // 通知完成
-    }
-  })
-  download.downloadFile("https://class100-ppt.oss-cn-shanghai.aliyuncs.com/TESTDD/ui/teaching/latest/build.zip", "./", (arg, percentage) => {
-    if (arg === "progress") {
-        console.log(222222, percentage)
-        // 显示进度
-    } else if (arg === "finished") {
-        // 通知完成
-    }
-  })
+  // download.downloadFile("https://class100-ppt.oss-cn-shanghai.aliyuncs.com/TESTDD/ui/teaching/latest/build.zip", "./", (arg, percentage) => {
+  //   if (arg === "progress") {
+  //     console.log(111111, percentage)
+  //     // 显示进度
+  //   } else if (arg === "finished") {
+  //     // 通知完成
+  //   }
+  // })
 }
