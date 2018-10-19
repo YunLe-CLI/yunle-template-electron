@@ -20,6 +20,7 @@ export default {
             /service\.(j|t)sx?$/,
             /models\//,
             /components\//,
+            /node_modules\//,
             /services\//,
             /utils\//,
           ],
