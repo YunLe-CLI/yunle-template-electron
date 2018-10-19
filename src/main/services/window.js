@@ -19,7 +19,7 @@ export function getCount() {
 }
 
 export function getPath() {
-  let path = 'app://localhost/home';
+  let path = 'app://localhost';
   if (is.dev()) {
     path = 'http://127.0.0.1:8000/';
   }

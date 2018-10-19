@@ -1,17 +1,9 @@
 {
   "private": true,
+  "version": "1.0.0",
   "author": {
     "name": "hexiao-o",
     "email": "460559761@qq.com"
-  },
-  "build": {
-    "files": [
-      "./dist/**/*",
-      "./pages/**/*",
-      "./node_modules/**/*"
-    ],
-    "appId": "com.hexiao-o.yunle-template-electron",
-    "asar": false
   },
   "scripts": {
     "start": "electron app/dist/main/main",
@@ -24,21 +16,24 @@
     "pack": "npm run build && npm run rebuild && build",
     "pack:dir": "npm run build && npm run rebuild && build --dir",
     "pack:dirOnly": "build --dir",
-    "rebuild": "electron-rebuild -m ./app"
+    "rebuild": "electron-rebuild -m ./app",
+    "build:win64": "node .yunle-electron/electron-builder.js --arch=x64 && npm run build && cross-env version=$npm_package_version build -w --x64 --publish=never --config ./electron-builder.yaml",
+    "build:mac": "node .yunle-electron/electron-builder.js && npm run build && cross-env version=$npm_package_version cross-env CSC_NAME='xiao he (U2784YTGC6)' build -m --publish=never --config ./electron-builder.yaml"
   },
   "devDependencies": {
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.5",
+    "electron-builder": "^20.28.4",
+    "electron-debug": "^2.0.0",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^1.8.2",
     "eslint": "^5.7.0",
     "eslint-config-umi": "^0.1.1",
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.1.0",
-    "concurrently": "^4.0.1",
-    "electron": "^3.0.5",
-    "electron-builder": "^20.28.4",
-    "electron-debug": "^2.0.0",
-    "electron-devtools-installer": "^2.2.4",
-    "electron-rebuild": "^1.8.2",
     "roadhog": "^2.4.5",
     "slash": "^2.0.0",
     "umi": "^2.1.2",
