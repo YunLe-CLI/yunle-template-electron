@@ -1,10 +1,10 @@
-import { app, BrowserWindow } from 'electron';
-import { join } from 'path';
+import { app } from 'electron';
 import is from 'electron-is';
 import log from 'electron-log';
 import * as application from './services/application';
 import * as window from './services/window';
 import * as menu from './services/menu';
+import * as update from './services/update';
 import { createSeve } from './utils/seve'
 import * as config from './configs/config';
 
@@ -61,7 +61,9 @@ app.on('quit', () => {
 global.services = {
   application,
   window,
+  update,
 };
+
 global.configs = {
   config,
 };

@@ -11,7 +11,8 @@
     "@babel/runtime": "^7.1.2",
     "electron-config": "^1.0.0",
     "electron-is": "^3.0.0",
-    "electron-log": "^2.2.14",
+    "electron-log": "^2.2.17",
+    "electron-updater": "^3.1.2",
     "request": "^2.88.0"
   }
 }
