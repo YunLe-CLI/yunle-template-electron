@@ -2,14 +2,21 @@ const fs = require('fs');
 const path = require('path');
 const version = require('../package.json').version;
 
-
-const updateURL = 'http://oss.hexiao-o.com/desktop/';
+// 更新url
+const updateURL = 'http://oss.hexiao-o.com/desktop/update';
+// 包名
 const productName = 'YunLe-electron';
+// app ID
 const appId = 'com.hexiao-o.yunle-template-electron';
+// OSX 图标
 const mac_icon = './build/icon.icns';
+// OSX 安装图标
 const dmg_install_icon = './build/icon.icns';
+// windows 图标
 const win_icon = './build/icon.ico';
+// windows 安装图标
 const win_install_icon = './build/icon.ico';
+// 打包后名字
 const artifactName = `\${productName}_V\${version}.\${ext}`;
 
 fs.writeFileSync(path.join(__dirname, '../electron-builder.yaml'),
@@ -41,7 +48,8 @@ win:
   target:
     - zip
     - nsis
-  requestedExecutionLevel: asInvoker
+  requestedExecutionLevel: requireAdministrator
+  signAndEditExecutable: false
   icon: ${win_icon}
   artifactName: ${artifactName}
 nsis:

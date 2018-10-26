@@ -1,5 +1,7 @@
+import is from 'electron-is';
 import { create, getPath } from './window';
 import download from '../utils/StreamDownload';
+import { appUpdater, checkForUpdatesAndNotify } from './update';
 
 export function init() {
   const win = create({ width: 800, height: 600 });
@@ -14,4 +16,13 @@ export function init() {
   //     // 通知完成
   //   }
   // })
+
+  // 调用自动下载
+  appUpdater()
+  if (!is.dev()) {
+    setTimeout(() => {
+        checkForUpdatesAndNotify()
+    }, 3000)
+  }
+
 }
