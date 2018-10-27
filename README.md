@@ -19,9 +19,17 @@ $ > electron
 
 或者： 
 
-* ```git clone https://github.com/YunLe-CLI/yunle-template-electron.git```
-* ```npm install ```
-* ```npm run start```
+* ```git clone https://github.com/YunLe-CLI/yunle-template-electron.git my-project```
+
+## 开发
+
+* 安装依赖 ``` npm install && cd app && npm install ```
+* 启动render进程 ``` npm run dev ```
+* 启动electron ``` npm run start ```
+
+## 打包
+* 打包osx ``` npm run build:mac ```
+* 打包windows ``` npm run build:win64 ```
 
 记得重置git历史:
 
