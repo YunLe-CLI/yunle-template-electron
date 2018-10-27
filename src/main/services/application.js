@@ -19,10 +19,8 @@ export function init() {
 
   // 调用自动下载
   appUpdater()
-  if (!is.dev()) {
     setTimeout(() => {
         checkForUpdatesAndNotify()
     }, 3000)
-  }
 
 }

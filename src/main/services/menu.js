@@ -1,4 +1,4 @@
-import { Menu } from 'electron';
+import { Menu, app } from 'electron';
 import log from 'electron-log';
 
 function getTemplate() {
@@ -6,6 +6,10 @@ function getTemplate() {
     {
       label: 'MyApp',
       submenu: [
+        {
+          label: `Version ${app.getVersion()}`,
+          enabled: false,
+        },
         { role: 'hide' },
         { role: 'hideothers' },
         { role: 'unhide' },
