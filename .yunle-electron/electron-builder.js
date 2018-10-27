@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const version = require('../package.json').version;
 
 // 更新url
 const updateURL = 'http://oss.hexiao-o.com/desktop/update';
@@ -21,7 +20,7 @@ const artifactName = `\${productName}_V\${version}.\${ext}`;
 
 fs.writeFileSync(path.join(__dirname, '../electron-builder.yaml'),
 	`directories:
-  output: dist/${version}
+  output: dist/\${version}
   buildResources: build
 appId: ${appId}
 compression: normal
@@ -43,15 +42,13 @@ mac:
   icon: ${mac_icon}
 dmg:
   icon: ${dmg_install_icon}
-  artifactName: ${artifactName}
+  artifactName: "\${productName}-Setup-\${version}.\${ext}"
 win:
   target:
     - zip
     - nsis
-  requestedExecutionLevel: requireAdministrator
-  signAndEditExecutable: false
   icon: ${win_icon}
-  artifactName: ${artifactName}
+  artifactName: "\${productName}-Setup-\${version}.\${ext}"
 nsis:
   perMachine: true
   differentialPackage: false
