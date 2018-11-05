@@ -24,7 +24,7 @@
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.6",
-    "electron-builder": "^20.29.1",
+    "electron-builder": "^20.31.2",
     "electron-debug": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.2",
