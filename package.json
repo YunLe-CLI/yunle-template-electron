@@ -6,8 +6,8 @@
     "email": "460559761@qq.com"
   },
   "scripts": {
-    "postinstall": "node .yunle-electron/electron-builder.js && cd ./app & npm i",
-    "start": "node .yunle-electron/electron-builder.js && electron app/dist/main/main",
+    "postinstall": "node .yunle-electron/electron-builder.js && cd ./app & npm i --production",
+    "start": "node .yunle-electron/electron-builder.js && cd ./app & npm i --production && electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
     "dev:renderer": "cd src/renderer && cross-env BROWSER=none ESLINT=none umi dev",
