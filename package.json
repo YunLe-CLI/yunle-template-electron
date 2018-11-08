@@ -28,21 +28,13 @@
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.8",
-    "electron-builder": "^20.33.1",
+    "electron-builder": "^20.33.2",
     "electron-debug": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.2",
-    "eslint": "^5.8.0",
-    "eslint-config-umi": "^1.2.0",
-    "eslint-plugin-flowtype": "^3.1.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.1.0",
     "fs-extra": "^7.0.1",
     "roadhog": "^2.4.5",
-    "slash": "^2.0.0",
-    "umi": "^2.2.5",
-    "umi-plugin-react": "^1.1.1"
+    "slash": "^2.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
