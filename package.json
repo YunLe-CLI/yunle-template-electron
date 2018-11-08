@@ -6,25 +6,25 @@
     "email": "460559761@qq.com"
   },
   "scripts": {
-    "start": "electron app/dist/main/main",
+    "start": "node .yunle-electron/electron-builder.js && electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
     "dev:renderer": "cd src/renderer && cross-env BROWSER=none ESLINT=none umi dev",
-    "build": "npm run build:main && npm run build:renderer",
+    "build": "node .yunle-electron/electron-builder.js && cd ./app & npm i --production && npm run build:main && npm run build:renderer",
     "build:main": "cross-env ESLINT=none roadhog build",
     "build:renderer": "cd src/renderer && cross-env ESLINT=none umi build",
     "pack": "npm run build && npm run rebuild && build",
     "pack:dir": "npm run build && npm run rebuild && build --dir",
     "pack:dirOnly": "build --dir",
     "rebuild": "electron-rebuild -m ./app",
-    "build:win64": "node .yunle-electron/electron-builder.js --arch=x64 && npm run build && cross-env version=$npm_package_version build -w --x64 --publish=never --config ./electron-builder.yaml",
-    "build:mac": "node .yunle-electron/electron-builder.js && npm run build && cross-env version=$npm_package_version cross-env CSC_NAME='xiao he (U2784YTGC6)' build -m --publish=never --config ./electron-builder.yaml"
+    "build:win64": "npm run build && cross-env version=$npm_package_version build -w --x64 --publish=never --config ./electron-builder.yaml",
+    "build:mac": "npm run build && cross-env version=$npm_package_version cross-env CSC_NAME='xiao he (U2784YTGC6)' build -m --publish=never --config ./electron-builder.yaml"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
-    "electron": "^3.0.6",
-    "electron-builder": "^20.31.2",
+    "electron": "^3.0.8",
+    "electron-builder": "^20.33.1",
     "electron-debug": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.2",
@@ -34,9 +34,10 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.1.0",
+    "fs-extra": "^7.0.1",
     "roadhog": "^2.4.5",
     "slash": "^2.0.0",
-    "umi": "^2.1.2",
+    "umi": "^2.2.5",
     "umi-plugin-react": "^1.1.1"
   },
   "dependencies": {}

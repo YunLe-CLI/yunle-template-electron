@@ -1,32 +1,36 @@
-import path, { join } from 'path';
-import slash from 'slash';
+
+// ref: https://umijs.org/config/
+import path, {join} from "path";
+import slash from "slash";
 
 export default {
-  mountElementId: 'container',
   history: 'browser',
-  publicPath: './',
+  publicPath: '/',
   outputPath: '../../app/dist/renderer',
+  exportStatic: {},
   plugins: [
-    [
-      'umi-plugin-react',
-      {
-        dva: {
-          immer: true
-        },
-        antd: true,
-        routes: {
-          exclude: [
-            /model\.(j|t)sx?$/,
-            /service\.(j|t)sx?$/,
-            /models\//,
-            /components\//,
-            /node_modules\//,
-            /services\//,
-            /utils\//,
-          ],
-        },
-      }
-    ],
+    // ref: https://umijs.org/plugin/umi-plugin-react.html
+    ['umi-plugin-react', {
+      antd: true,
+      dva: {
+        immer: true
+      },
+      dynamicImport: true,
+      title: 'renderer2',
+      dll: false,
+      routes: {
+        exclude: [
+          /model\.(j|t)sx?$/,
+          /service\.(j|t)sx?$/,
+          /models\//,
+          /components\//,
+          /node_modules\//,
+          /services\//,
+          /utils\//,
+        ],
+      },
+      hardSource: false,
+    }],
   ],
   alias:{
     components: path.resolve(__dirname,'src/components'),
@@ -48,12 +52,12 @@ export default {
     if (load.includes(request)) {
       isExternal = `require("${request}")`;
     }
-    const appDeps = Object.keys(require('../../app/package').dependencies);
-    if (appDeps.includes(request)) {
-      const orininalPath = slash(join(__dirname, '../../app/node_modules', request));
-      const requireAbsolute = `require('${orininalPath}')`;
-      isExternal = isDev ? requireAbsolute : `require('${request}')`;
-    }
+    // const appDeps = Object.keys(require('../../app/package').dependencies);
+    // if (appDeps.includes(request)) {
+    //   const orininalPath = slash(join(__dirname, '../../app/node_modules', request));
+    //   const requireAbsolute = `require('${orininalPath}')`;
+    //   isExternal = isDev ? requireAbsolute : `require('${request}')`;
+    // }
     callback(null, isExternal);
   },
-};
+}

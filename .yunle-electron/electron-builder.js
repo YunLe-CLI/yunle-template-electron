@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fse = require('fs-extra')
 const path = require('path');
 
 // 更新url
@@ -59,3 +60,7 @@ nsis:
   oneClick: false
   runAfterFinish: true
 `);
+
+fse.copy(path.join(__dirname, '../src/renderer/package.json'), path.join(__dirname, '../app/package.json'))
+    .then(() => console.log('success!'))
+    .catch(err => console.error(err))

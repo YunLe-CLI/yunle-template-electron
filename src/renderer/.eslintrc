@@ -1,12 +1,3 @@
 {
-  "extends": "umi",
-  "rules": {
-    "no-underscore-dangle": 0
-  },
-  "globals": {},
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    }
-  }
+  "extends": "eslint-config-umi"
 }
