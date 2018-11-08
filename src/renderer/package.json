@@ -1,9 +1,6 @@
 {
   "private": true,
-  "name": "yunle-template-electron",
   "version": "1.0.0",
-  "description": "Yet another boilerplate for umi+dva+electron.",
-  "main": "dist/main/main.js",
   "author": {
     "name": "hexiao-o",
     "email": "460559761@qq.com"
@@ -26,14 +23,7 @@
     "umi": "^2.1.2",
     "umi-plugin-react": "^1.1.1"
   },
-  "dependencies": {
-    "@babel/runtime": "^7.1.5",
-    "electron-config": "^1.0.0",
-    "electron-is": "^3.0.0",
-    "electron-log": "^2.2.17",
-    "electron-updater": "^3.2.1",
-    "request": "^2.88.0"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=8.0.0"
   }

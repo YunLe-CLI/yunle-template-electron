@@ -1,17 +1,20 @@
 {
   "private": true,
+  "name": "yunle-template-electron",
+  "description": "Yet another boilerplate for umi+dva+electron.",
   "version": "1.0.0",
+  "main": "dist/main/main.js",
   "author": {
     "name": "hexiao-o",
     "email": "460559761@qq.com"
   },
   "scripts": {
     "postinstall": "cd src/renderer && npm i",
-    "start": "node .yunle-electron/electron-builder.js && cd ./app & npm i --production && electron app/dist/main/main",
+    "start": "electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
     "dev:renderer": "cd src/renderer && cross-env BROWSER=none ESLINT=none umi dev",
-    "build": "node .yunle-electron/electron-builder.js && cd ./app & npm i --production && npm run build:main && npm run build:renderer",
+    "build": "node .yunle-electron/electron-builder.js && cd ./app && npm i --production && npm run build:main && npm run build:renderer",
     "build:main": "cross-env ESLINT=none roadhog build",
     "build:renderer": "cd src/renderer && cross-env ESLINT=none umi build",
     "pack": "npm run build && npm run rebuild && build",
@@ -41,5 +44,12 @@
     "umi": "^2.2.5",
     "umi-plugin-react": "^1.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "electron-config": "^1.0.0",
+    "electron-is": "^3.0.0",
+    "electron-log": "^2.2.17",
+    "electron-updater": "^3.2.1",
+    "request": "^2.88.0"
+  }
 }
