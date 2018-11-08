@@ -1,11 +1,11 @@
+import { Scrollbars } from 'react-custom-scrollbars';
 import styles from './index.less';
 
 function BasicLayout(props) {
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
+    <Scrollbars className={styles.normal}>
       { props.children }
-    </div>
+    </Scrollbars>
   );
 }
 
