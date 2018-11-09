@@ -9,7 +9,7 @@
     "email": "460559761@qq.com"
   },
   "scripts": {
-    "postinstall": "src/renderer && npm i",
+    "postinstall": "cd src/renderer && npm i",
     "start": "electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
