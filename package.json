@@ -13,7 +13,7 @@
     "start": "electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
-    "dev:renderer": "cd src/renderer && cross-env BROWSER=none ESLINT=none umi dev",
+    "dev:renderer": "cross-env ESLINT=none BROWSER=none COMPRESS=none npm run start --prefix src/renderer",
     "build": "npm run build:main && npm run build:renderer && node .yunle-electron/electron-builder.js && npm i --production  --prefix ./app",
     "build:main": "cross-env ESLINT=none roadhog build",
     "build:renderer": "npm run build --prefix src/renderer",
