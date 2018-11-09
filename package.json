@@ -37,6 +37,7 @@
     "slash": "^2.0.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.1.5",
     "electron-config": "^1.0.0",
     "electron-is": "^3.0.0",
     "electron-log": "^2.2.17",
