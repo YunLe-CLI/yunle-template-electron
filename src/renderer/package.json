@@ -23,7 +23,9 @@
     "umi": "^2.1.2",
     "umi-plugin-react": "^1.1.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-custom-scrollbars": "^4.2.1"
+  },
   "engines": {
     "node": ">=8.0.0"
   }

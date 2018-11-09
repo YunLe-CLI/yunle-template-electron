@@ -9,14 +9,14 @@
     "email": "460559761@qq.com"
   },
   "scripts": {
-    "postinstall": "cd src/renderer && npm i",
+    "postinstall": "npm i --prefix src/renderer",
     "start": "electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
     "dev:renderer": "cd src/renderer && cross-env BROWSER=none ESLINT=none umi dev",
-    "build": "node .yunle-electron/electron-builder.js && cd ./app && npm i --production && npm run build:main && npm run build:renderer",
+    "build": "npm run build:main && npm run build:renderer && node .yunle-electron/electron-builder.js && npm i --production  --prefix ./app",
     "build:main": "cross-env ESLINT=none roadhog build",
-    "build:renderer": "cd src/renderer && cross-env ESLINT=none umi build",
+    "build:renderer": "npm run build --prefix src/renderer",
     "pack": "npm run build && npm run rebuild && build",
     "pack:dir": "npm run build && npm run rebuild && build --dir",
     "pack:dirOnly": "build --dir",
@@ -37,7 +37,6 @@
     "slash": "^2.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
     "electron-config": "^1.0.0",
     "electron-is": "^3.0.0",
     "electron-log": "^2.2.17",
