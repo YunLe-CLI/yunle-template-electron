@@ -9,7 +9,6 @@
     "email": "460559761@qq.com"
   },
   "scripts": {
-    "postinstall": "cd src/renderer && npm i",
     "start": "electron app/dist/main/main",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
@@ -28,7 +27,7 @@
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.8",
-    "electron-builder": "^20.33.2",
+    "electron-builder": "^20.34.0",
     "electron-debug": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.2",
@@ -38,10 +37,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "electron-config": "^1.0.0",
+    "electron-config": "^2.0.0",
     "electron-is": "^3.0.0",
     "electron-log": "^2.2.17",
-    "electron-updater": "^3.2.1",
+    "electron-updater": "^3.2.3",
     "request": "^2.88.0"
   }
 }
