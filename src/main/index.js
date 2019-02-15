@@ -8,6 +8,11 @@ import * as update from './services/update';
 import { createSeve } from './utils/seve'
 import * as config from './configs/config';
 
+global.console = console = {
+    ...log,
+    log: log.info
+};
+
 log.transports.file.level = 'info';
 
 log.info('(main/index) app start');

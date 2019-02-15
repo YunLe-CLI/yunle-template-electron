@@ -15,9 +15,8 @@ export default {
       dva: {
         immer: true
       },
-      dynamicImport: true,
       title: 'renderer2',
-      dll: false,
+      dll: true,
       routes: {
         exclude: [
           /model\.(j|t)sx?$/,
