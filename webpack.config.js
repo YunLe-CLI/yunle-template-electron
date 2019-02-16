@@ -9,12 +9,16 @@ export default function (webpackConfig, { webpack }) {
   webpackConfig.output.path = join(cwd, './app/dist/main');
   webpackConfig.target = 'electron';
   webpackConfig.externals = (context, request, callback) => {
-    callback(null, request.charAt(0) === '.' ? false : `require("${request}")`);
+    if (request.charAt(0) === '.' || request.charAt(0) === '@') {
+      callback(null, false)
+    } else {
+      callback(null, `require("${request}")`);
+    }
   };
   webpackConfig.plugins.push(
-    new webpack.DefinePlugin({
-      $dirname: '__dirname',
-    }),
+      new webpack.DefinePlugin({
+        $dirname: '__dirname',
+      }),
   );
   return webpackConfig;
 };
