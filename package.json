@@ -26,8 +26,8 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
-    "electron": "^4.0.7",
-    "electron-builder": "^20.38.5",
+    "electron": "^4.0.8",
+    "electron-builder": "^20.39.0",
     "electron-debug": "^2.1.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.4",
