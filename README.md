@@ -23,9 +23,8 @@ $ > electron
 
 ## 开发
 
-* 安装依赖 ``` npm install && cd src/renderer && npm i ```
-* 启动render进程 ``` npm run dev ```
-* 启动electron ``` npm run start ```
+* 安装依赖 ``` npm install```
+* 启动 ``` npm run start ```
 
 ## 打包
 * 打包osx ``` npm run build:mac ```
