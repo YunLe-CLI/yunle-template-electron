@@ -1,46 +1,51 @@
 {
-  "private": true,
-  "name": "yunle-template-electron",
-  "description": "Yet another boilerplate for umi+dva+electron.",
-  "version": "1.0.0",
-  "main": "dist/main/main.js",
-  "author": {
-    "name": "hexiao-o",
-    "email": "460559761@qq.com"
-  },
+  "name": "metting",
+  "version": "1.0.3",
+  "main": "./dist/main.js",
+  "description": "A minimal Electron application written with Typescript",
   "scripts": {
-    "start": "electron app/dist/main/main",
-    "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
-    "dev:main": "cross-env ESLINT=none BROWSER=none COMPRESS=none roadhog build -w",
-    "dev:renderer": "cross-env ESLINT=none BROWSER=none COMPRESS=none npm run start --prefix src/renderer",
-    "build": "npm run build:main && npm run build:renderer && node .yunle-electron/electron-builder.js && npm i --production  --prefix ./app",
-    "build:main": "cross-env ESLINT=none roadhog build",
-    "build:renderer": "npm run build --prefix src/renderer",
+    "build": "npm run build:yaml && tsc",
+    "watch": "tsc -w",
+    "build:yaml": "node .scripts/electron-builder.js",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js",
     "pack": "npm run build && npm run rebuild && build",
     "pack:dir": "npm run build && npm run rebuild && build --dir",
     "pack:dirOnly": "build --dir",
     "rebuild": "electron-rebuild -m ./app",
-    "build:win64": "npm run build && cross-env version=$npm_package_version build -w --x64 --publish=never --config ./electron-builder.yaml",
-    "build:mac": "npm run build && cross-env version=$npm_package_version cross-env CSC_NAME='xiao he (U2784YTGC6)' build -m --publish=never --config ./electron-builder.yaml"
+    "rm:win64File": "rm -fr bin/$npm_package_version/win-unpacked",
+    "rm:macFile": "rm -fr bin/$npm_package_version/mac",
+    "build:win64": "npm run build && cross-env version=$npm_package_version electron-builder build -w --x64 --publish=never --config ./electron-builder.json && npm run rm:win64File",
+    "build:mac": "npm run build && cross-env version=$npm_package_version electron-builder build -m --publish=never --config ./electron-builder.json && npm run rm:macFile",
+    "build:all": "npm run build:win64 && npm run build:mac"
   },
+  "repository": "https://github.com/electron/electron-quick-start-typescript",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "typescript"
+  ],
+  "author": "dagouzhi",
+  "license": "CC0-1.0",
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "cross-env": "^5.2.0",
-    "electron": "^4.1.4",
-    "electron-builder": "^20.40.2",
-    "electron-debug": "^2.2.0",
-    "electron-devtools-installer": "^2.2.4",
-    "electron-rebuild": "^1.8.4",
-    "fs-extra": "^7.0.1",
-    "roadhog": "^2.5.0-beta.4",
-    "slash": "^2.0.0"
+    "@types/node": "12",
+    "cross-env": "^7.0.2",
+    "electron": "^8.2.3",
+    "electron-builder": "^22.6.0",
+    "electron-devtools-installer": "^3.0.0",
+    "fs-extra": "^9.0.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.3",
-    "electron-config": "^2.0.0",
-    "electron-is": "^3.0.0",
-    "electron-log": "^3.0.5",
-    "electron-updater": "^4.0.6",
-    "request": "^2.88.0"
+    "app-root-path": "^3.0.0",
+    "delay": "^4.3.0",
+    "electron-is-dev": "^1.2.0",
+    "electron-log": "^4.1.2",
+    "electron-store": "^5.1.1",
+    "electron-updater": "^4.3.1"
   }
 }
